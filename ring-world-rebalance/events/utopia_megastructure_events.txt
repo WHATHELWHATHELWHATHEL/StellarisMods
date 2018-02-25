@@ -1,0 +1,530 @@
+
+################ Utopia Events #################
+#ID 1 - 1999#
+
+namespace = utopia
+
+@tier1influencecontact = 7
+@tier1influencecontactxenophile = 8
+@tier1influencecontactmin = 20
+@tier1influencecontactmax = 80
+
+@tier2influencecontact = 10
+@tier2influencecontactxenophile = 12
+@tier2influencecontactmin = 40
+@tier2influencecontactmax = 100
+
+@tier1unityreward = 6
+@tier1unitymin = 6
+@tier1unitymax = 6
+@tier2unityreward = 12
+@tier2unitymin = 150
+@tier2unitymax = 1000
+@tier3unityreward = 18
+@tier3unitymin = 250
+@tier3unitymax = 1500
+
+@tier1materialreward = 6
+@tier1materialmin = 100
+@tier1materialmax = 500
+@tier2materialreward = 12
+@tier2materialmin = 150
+@tier2materialmax = 1000
+@tier3materialreward = 18
+@tier3materialmin = 250
+@tier3materialmax = 1500
+@tier4materialreward = 24
+@tier4materialmin = 350
+@tier4materialmax = 2000
+@tier5materialreward = 48
+@tier5materialmin = 700
+@tier5materialmax = 4000
+
+@tier1influencereward = 6
+@tier1influencemin = 40
+@tier1influencemax = 100
+@tier2influencereward = 12
+@tier2influencemin = 80
+@tier2influencemax = 175
+@tier3influencereward = 18
+@tier3influencemin = 125
+@tier3influencemax = 250
+@tier4influencereward = 24
+@tier4influencemin = 150
+@tier4influencemax = 300
+@tier5influencereward = 36
+@tier5influencemin = 250
+@tier5influencemax = 500
+@tier6influencereward = 48
+@tier6influencemin = 300
+@tier6influencemax = 600
+@tier1researchreward = 6
+@tier1researchmin = 60
+@tier1researchmax = 150
+@tier2researchreward = 12
+@tier2researchmin = 90
+@tier2researchmax = 250
+@tier3researchreward = 18
+@tier3researchmin = 120
+@tier3researchmax = 350
+@tier4researchreward = 24
+@tier4researchmin = 150
+@tier4researchmax = 500
+@tier5researchreward = 48
+@tier5researchmin = 300
+@tier5researchmax = 1000
+
+# Ring World Completed
+country_event = {
+	id = utopia.2004
+	title = "utopia.2004.name"
+	desc = {
+		text = utopia.2004.desc.a
+		trigger = {
+			NOT = { has_country_flag = finished_ringworld }
+		}
+	}
+	desc = {
+		text = utopia.2004.desc.b
+		trigger = {
+			has_country_flag = finished_ringworld
+		}
+	}
+	picture = GFX_evt_ringworld
+	show_sound = event_ringworld_build_complete
+	location = FROMFROM
+
+	is_triggered_only = yes
+
+	trigger = {
+		FROM = {
+			OR = {
+				is_megastructure_type = ring_world_31_intermediate
+				is_megastructure_type = ring_world_32_intermediate
+				is_megastructure_type = ring_world_33_intermediate
+			}
+		}
+		FROMFROM = {
+			NOT = {
+				any_system_megastructure = {
+					OR = {
+						is_megastructure_type = ring_world_21
+						is_megastructure_type = ring_world_22
+						is_megastructure_type = ring_world_23
+					}
+				}
+			}
+		}
+	}
+
+	immediate = {
+		set_country_flag = built_ringworld
+		FROMFROM = { save_event_target_as = completed_ringworld_system }
+		every_country = {
+			limit = {
+				is_ai = no
+				NOT = { is_same_value = ROOT }
+			}
+			country_event = { id = utopia.2005 }
+		}
+	}
+
+	after = {
+		country_event = { id = utopia.2006 days = 5 }
+	}
+
+	option = {
+		name = "utopia.2004.a"
+	}
+}
+
+# Ring World Completed (Others)
+country_event = {
+	id = utopia.2005
+	title = "utopia.2005.name"
+	desc = {
+		text = utopia.2005.desc.a
+		trigger = {
+			NOT = { FROM = { has_country_flag = finished_ringworld } }
+		}
+	}
+	desc = {
+		text = utopia.2005.desc.b
+		trigger = {
+			FROM = { has_country_flag = finished_ringworld }
+		}
+	}
+	picture = GFX_evt_ringworld
+	show_sound = event_mega_structure_other_empire_build_complete
+	location = event_target:completed_ringworld_system
+
+	is_triggered_only = yes
+
+	option = { # has built own Ring World
+		trigger = {
+			OR = {
+				any_owned_megastructure = {
+					OR = {
+						is_megastructure_type = ring_world_1
+						is_megastructure_type = ring_world_21
+						is_megastructure_type = ring_world_22
+						is_megastructure_type = ring_world_23
+					}
+				}
+				has_country_flag = finished_ringworld
+			}
+		}
+		name = "utopia.2005.a"
+	}
+	option = { # has no Ring World
+		trigger = {
+			any_owned_megastructure = {
+				NOT = {
+					OR = {
+						is_megastructure_type = ring_world_1
+						is_megastructure_type = ring_world_21
+						is_megastructure_type = ring_world_22
+						is_megastructure_type = ring_world_23
+					}
+				}
+			}
+			NOT = { has_country_flag = finished_ringworld }
+		}
+		name = "utopia.2005.b"
+	}
+}
+
+# Ring World Flag Event (HIDDEN)
+country_event = {
+	id = utopia.2006
+	hide_window = yes
+
+	is_triggered_only = yes
+
+	immediate = {
+		set_country_flag = finished_ringworld
+	}
+}
+
+### Ruined Megastructures
+
+# Ruined Dyson Sphere
+ship_event = {
+	id = utopia.2010
+	title = "utopia.2010.name"
+	desc = {
+		trigger = {
+			NOT = { owner = { has_technology = tech_mega_engineering } }
+		}
+		text = utopia.2010.a.desc
+	}
+	desc = {
+		trigger = {
+			owner = { has_technology = tech_mega_engineering }
+		}
+		text = utopia.2010.b.desc
+	}
+	picture = GFX_evt_space_debris
+	show_sound = event_radio_chatter
+	location = FROM
+
+	is_triggered_only = yes
+
+	trigger = {
+		owner = {
+			NOT = { has_country_flag = encountered_ruined_dyson }
+		}
+		FROM = {
+			has_star_flag = ruined_dyson_system
+			any_system_megastructure = { is_megastructure_type = dyson_sphere_ruined }
+		}
+	}
+
+	immediate = {
+		FROM = { save_event_target_as = dyson_system }
+		owner = { set_country_flag = encountered_ruined_dyson }
+	}
+
+	option = {
+		name = "utopia.2010.a"
+		trigger = {
+			owner = {
+				any_owned_megastructure = {
+					OR = {
+						is_megastructure_type = dyson_sphere_1
+						is_megastructure_type = dyson_sphere_2
+						is_megastructure_type = dyson_sphere_3
+						is_megastructure_type = dyson_sphere_4
+						is_megastructure_type = dyson_sphere_5
+					}
+				}
+			}
+		}
+	}
+	option = {
+		name = FASCINATING
+		trigger = {
+			NOT = {
+				owner = {
+					any_owned_megastructure = {
+						OR = {
+							is_megastructure_type = dyson_sphere_1
+							is_megastructure_type = dyson_sphere_2
+							is_megastructure_type = dyson_sphere_3
+							is_megastructure_type = dyson_sphere_4
+							is_megastructure_type = dyson_sphere_5
+						}
+					}
+				}
+			}
+		}
+	}
+}
+
+# Ruined Dyson Sphere Restored
+country_event = {
+	id = utopia.2011
+	title = "utopia.2011.name"
+	desc = "utopia.2011.desc"
+	picture = GFX_evt_dyson_sphere
+	show_sound = event_dyson_sphere_build_complete
+	location = FROM
+
+	is_triggered_only = yes
+
+	option = {
+		name = EXCELLENT
+	}
+}
+
+# Ruined Science Nexus
+ship_event = {
+	id = utopia.2012
+	title = "utopia.2012.name"
+	desc = "utopia.2012.desc"
+	picture = GFX_evt_space_debris
+	show_sound = event_radio_chatter
+	location = FROM
+
+	is_triggered_only = yes
+
+	trigger = {
+		owner = {
+			NOT = { has_country_flag = encountered_ruined_nexus }
+		}
+		FROM = {
+			has_star_flag = ruined_nexus_system
+			any_system_megastructure = { is_megastructure_type = think_tank_ruined }
+		}
+	}
+
+	immediate = {
+		FROM = { save_event_target_as = nexus_system }
+		owner = { set_country_flag = encountered_ruined_nexus }
+	}
+
+	option = {
+		name = "utopia.2012.a"
+		trigger = {
+			owner = {
+				OR = {
+					has_megastructure = think_tank_1
+					has_megastructure = think_tank_2
+					has_megastructure = think_tank_3
+					has_megastructure = think_tank_4
+				}
+			}
+		}
+	}
+	option = {
+		name = FASCINATING
+		trigger = {
+			NOT = {
+				owner = {
+					OR = {
+						has_megastructure = think_tank_1
+						has_megastructure = think_tank_2
+						has_megastructure = think_tank_3
+						has_megastructure = think_tank_4
+					}
+				}
+			}
+		}
+	}
+}
+
+# Ruined Science Nexus Restored
+country_event = {
+	id = utopia.2013
+	title = "utopia.2013.name"
+	desc = "utopia.2013.desc"
+	picture = GFX_evt_think_tank
+	show_sound = event_think_tank_build_complete
+	location = FROM
+
+	is_triggered_only = yes
+
+	option = {
+		name = EXCELLENT
+	}
+}
+
+# Ruined Sentry Array
+ship_event = {
+	id = utopia.2014
+	title = "utopia.2014.name"
+	desc = "utopia.2014.desc"
+	picture = GFX_evt_space_debris
+	show_sound = event_radio_chatter
+	location = FROM
+
+	is_triggered_only = yes
+
+	trigger = {
+		owner = {
+			NOT = { has_country_flag = encountered_ruined_sentry }
+		}
+		FROM = {
+			has_star_flag = ruined_sentry_system
+			any_system_megastructure = { is_megastructure_type = spy_orb_ruined }
+		}
+	}
+
+	immediate = {
+		FROM = { save_event_target_as = sentry_system }
+		owner = { set_country_flag = encountered_ruined_sentry }
+	}
+
+	option = {
+		name = "utopia.2014.a"
+		trigger = {
+			owner = {
+				any_owned_megastructure = {
+					OR = {
+						is_megastructure_type = spy_orb_1
+						is_megastructure_type = spy_orb_2
+						is_megastructure_type = spy_orb_3
+						is_megastructure_type = spy_orb_4
+					}
+				}
+			}
+		}
+	}
+	option = {
+		name = FASCINATING
+		trigger = {
+			NOT = {
+				owner = {
+					any_owned_megastructure = {
+						OR = {
+							is_megastructure_type = spy_orb_1
+							is_megastructure_type = spy_orb_2
+							is_megastructure_type = spy_orb_3
+							is_megastructure_type = spy_orb_4
+						}
+					}
+				}
+			}
+		}
+	}
+}
+
+# Ruined Sentry Array Restored
+country_event = {
+	id = utopia.2015
+	title = "utopia.2015.name"
+	desc = "utopia.2015.desc"
+	picture = GFX_evt_spy_orb
+	show_sound = event_spy_orb_build_complete
+	location = FROM
+
+	is_triggered_only = yes
+
+	option = {
+		name = EXCELLENT
+	}
+}
+
+# Ruined Ring World
+ship_event = {
+	id = utopia.2016
+	title = "utopia.2016.name"
+	desc = "utopia.2016.desc"
+	picture = GFX_evt_space_debris
+	show_sound = event_radio_chatter
+	location = FROM
+
+	is_triggered_only = yes
+
+	trigger = {
+		owner = {
+			NOT = { has_country_flag = encountered_ruined_ring }
+		}
+		FROM = {
+			has_star_flag = ruined_ring_system
+			any_system_megastructure = { is_megastructure_type = ring_world_ruined }
+		}
+	}
+
+	immediate = {
+		FROM = { save_event_target_as = ring_system }
+		owner = { set_country_flag = encountered_ruined_ring }
+	}
+
+	option = {
+		name = "utopia.2016.a"
+		trigger = {
+			owner = { has_country_flag = finished_ringworld }
+		}
+	}
+	option = {
+		name = AMAZING
+		trigger = {
+			owner = { NOT = { has_country_flag = finished_ringworld } }
+		}
+	}
+}
+
+# Ruined Ring World Restored
+country_event = {
+	id = utopia.2017
+	title = "utopia.2017.name"
+	desc = "utopia.2017.desc"
+	picture = GFX_evt_ringworld
+	show_sound = event_ringworld_build_complete
+	location = FROM
+
+	is_triggered_only = yes
+
+	option = {
+		name = EXCELLENT
+	}
+}
+
+# Habitat Complete Notification
+country_event = {
+	id = "utopia.61"
+	title = "utopia.61.name"
+	desc = {
+		trigger = {
+			NOT = { has_country_flag = already_built_habitat }
+		}
+		text = "utopia.61.desc.a"
+	}
+
+	desc = {
+		trigger = {
+			has_country_flag = already_built_habitat
+		}
+		text = "utopia.61.desc.b"
+	}
+	show_sound = event_mystic_reveal
+	picture = GFX_evt_colony_settlement
+	is_triggered_only = yes
+	location = FromFromFrom
+
+	option = {
+		name = EXCELLENT
+		set_country_flag = already_built_habitat
+	}
+}
