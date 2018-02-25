@@ -8,7 +8,7 @@ ring_world_1 = {
 	entity_offset = { x = 0 y = 0 }
 	build_time = 1800
 	build_cost = {
-		minerals = 10000
+		minerals = 5000
 	}
 
 	maintenance = {
@@ -102,7 +102,7 @@ ring_world_2_intermediate = {
 
 	build_time = 4800
 	build_cost = {
-		minerals = 20000
+		minerals = 10000
 	}
 
 	possible = {
@@ -196,7 +196,7 @@ ring_world_31_intermediate = {
 	}
 	build_time = 3600
 	build_cost = {
-		minerals = 20000
+		minerals = 10000
 	}
 
 	possible = {
@@ -322,6 +322,14 @@ ring_world_31_intermediate = {
 			event_target:ring_section = { set_name = "NAME_Habitable_Section_C" }
 			break = yes
 		}
+		if = {
+			limit = { has_star_flag = ring_section_3 }
+			remove_star_flag = ring_section_1
+			remove_star_flag = ring_section_2
+			remove_star_flag = ring_section_3
+			event_target:ring_section = { set_name = "NAME_Habitable_Section_D" }
+			break = yes
+		}
 	}
 }
 
@@ -334,7 +342,7 @@ ring_world_32_intermediate = {
 	}
 	build_time = 3600
 	build_cost = {
-		minerals = 20000
+		minerals = 10000
 	}
 
 	possible = {
@@ -460,6 +468,14 @@ ring_world_32_intermediate = {
 			event_target:ring_section = { set_name = "NAME_Habitable_Section_C" }
 			break = yes
 		}
+		if = {
+			limit = { has_star_flag = ring_section_3 }
+			remove_star_flag = ring_section_1
+			remove_star_flag = ring_section_2
+			remove_star_flag = ring_section_3
+			event_target:ring_section = { set_name = "NAME_Habitable_Section_D" }
+			break = yes
+		}
 	}
 }
 
@@ -472,7 +488,7 @@ ring_world_33_intermediate = {
 	}
 	build_time = 3600
 	build_cost = {
-		minerals = 20000
+		minerals = 10000
 	}
 
 	possible = {
@@ -603,6 +619,14 @@ ring_world_33_intermediate = {
 			event_target:ring_section = { set_name = "NAME_Habitable_Section_C" }
 			break = yes
 		}
+		if = {
+			limit = { has_star_flag = ring_section_3 }
+			remove_star_flag = ring_section_1
+			remove_star_flag = ring_section_2
+			remove_star_flag = ring_section_3
+			event_target:ring_section = { set_name = "NAME_Habitable_Section_D" }
+			break = yes
+		}
 	}
 }
 
@@ -626,7 +650,7 @@ ring_world_restored = {
 	}
 	build_time = 3600
 	build_cost = {
-		minerals = 20000
+		minerals = 10000
 	}
 
 	possible = {
