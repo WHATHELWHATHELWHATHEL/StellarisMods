@@ -1,0 +1,30 @@
+﻿l_english:
+
+ ####################################
+ # Modifiers added on research sector of the ringworld
+ ####################################
+ ringworld_science_complex:0 "Ringworld Research Complex"
+ ringworld_science_complex_desc:0 "This section of ringworld contains massive built-in complex and structures, which greatly increase the efficency of science research and social ideas exchange."
+
+ ####################################
+ # Description added to describe all the other three types on ringworld
+ ####################################
+
+ ring_world_31_intermediate:0 "Completed Ring World Section"
+ ring_world_31_intermediate_DESC:0 "A fully functional habitable Ring World section, complete with an active biosphere, that is ready for settlement."
+
+ ring_world_32_intermediate:0 "Completed Ring World Section"
+ ring_world_32_intermediate_DESC:0 "A fully functional habitable Ring World section, complete with an active biosphere, that is ready for settlement."
+
+ ring_world_33_intermediate:0 "Completed Ring World Section"
+ ring_world_33_intermediate_DESC:0 "A fully functional habitable Ring World section, complete with an active biosphere, that is ready for settlement."
+
+
+ ring_world_21:0 "Ring World Frame Section"
+ ring_world_21_DESC:0 "This skeletal frame section makes up roughly one quarter of the unfinished Ring World's total surface area. Work on the smaller habitable section has not yet been completed."
+
+ ring_world_22:0 "Ring World Frame Section"
+ ring_world_22_DESC:0 "This skeletal frame section makes up roughly one quarter of the unfinished Ring World's total surface area. Work on the smaller habitable section has not yet been completed."
+
+ ring_world_23:0 "Ring World Frame Section"
+ ring_world_23_DESC:0 "This skeletal frame section makes up roughly one quarter of the unfinished Ring World's total surface area. Work on the smaller habitable section has not yet been completed."
