@@ -1,0 +1,118 @@
+# Basic resource production unit are available at start
+hydroponics_bay = {
+	icon = "GFX_spaceport_module_hydroponic_farms"
+	construction_days = 60
+
+	cost = {
+		minerals = 50
+	}
+
+	potential = {
+		exists = owner
+		owner = { NOT = { has_authority = auth_machine_intelligence } }
+	}
+
+	produced_resources = {
+		food = 3
+	}
+
+	ai_build_at_chokepoint = no
+	ai_build_outside_chokepoint = yes
+	ai_weight = {
+		weight = 50
+	}
+}
+
+asteroid_mining_site = {
+	icon = "GFX_spaceport_nebula_refinery"
+	construction_days = 60
+
+	potential = {
+		exists = owner
+	}
+
+	cost = {
+		minerals = 50
+	}
+
+	produced_resources = {
+		minerals = 3
+	}
+
+	ai_build_at_chokepoint = yes
+	ai_build_outside_chokepoint = yes
+	ai_weight = {
+		weight = 150
+	}
+}
+
+solar_energy_grid = {
+	icon = "GFX_solar_panel_network"
+	construction_days = 60
+
+	potential = {
+		exists = owner
+	}
+
+	cost = {
+		minerals = 50
+	}
+
+	produced_resources = {
+		energy = 3
+	}
+
+	ai_build_at_chokepoint = yes
+	ai_build_outside_chokepoint = yes
+	ai_weight = {
+		weight = 150
+	}
+}
+
+deep_space_science_lab = {
+	icon = "GFX_spaceport_module_observatory"
+	construction_days = 60
+
+	potential = {
+		exists = owner
+	}
+
+	cost = {
+		minerals = 50
+	}
+
+	produced_resources = {
+		physics_research = 1
+		society_research = 1
+		engineering_research = 1
+	}
+
+	ai_build_at_chokepoint = yes
+	ai_build_outside_chokepoint = yes
+	ai_weight = {
+		weight = 150
+	}
+}
+
+documentary_studio = {
+	icon = "GFX_spaceport_module_pioneering_terminal"
+	construction_days = 60
+
+	potential = {
+		exists = owner
+	}
+
+	cost = {
+		minerals = 50
+	}
+
+	produced_resources = {
+		unity = 3
+	}
+
+	ai_build_at_chokepoint = yes
+	ai_build_outside_chokepoint = yes
+	ai_weight = {
+		weight = 150
+	}
+}

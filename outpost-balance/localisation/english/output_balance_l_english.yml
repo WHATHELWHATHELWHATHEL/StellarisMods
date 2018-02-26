@@ -1,0 +1,14 @@
+﻿l_english:
+
+ # Mining site
+ sm_asteroid_mining_site:0 "Asteroid Mining Site"
+ sm_asteroid_mining_site_desc:0 "Platform used to salvage any useful minerals from systems' asteroids.\n"
+ # Solar panel array
+ sm_solar_energy_grid:0 "Solar Energy Grid"
+ sm_solar_energy_grid_desc:0 "A grid of solar cell panel to collect energy emitted from celestial body.\n"
+ # Deep Space Science Lab
+ sm_deep_space_science_lab:0 "Deep Sapce Science Lab"
+ sm_deep_space_science_lab_desc:0 "A group of deep space science complex that allow scientists to commit experiments that are inappropriate for planet-based facilities.\n"
+ # Documentary Studio
+ sm_documentary_studio:0 "Documentary Studio"
+ sm_documentary_studio_desc:0 "Buildings that housing the crews who are making the interstellar documentary. These films will promote cohension on venturing toward space.\n"
