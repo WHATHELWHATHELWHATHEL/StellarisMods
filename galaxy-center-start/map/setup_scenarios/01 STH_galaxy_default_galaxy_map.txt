@@ -1,0 +1,27 @@
+### Static map. 1400+ star systems. Map of Full Galaxy with all races.
+### This map must NOT include the zeta aquilae system, otherwise game will identify map as alpha/beta quadrant map.
+### This map must include the Signum system, initializer signum_mm, which is used to identify the map.
+static_galaxy_scenario = {
+	name = "STH_galaxy_default_galaxy_map"
+	colonizable_planet_odds = 1.0
+	priority = 0
+  default = yes
+  num_empires = { min = 1 max = 32 }
+  num_empire_default = 1
+	num_hyperlanes = { min = 5 max = 5 }
+	num_hyperlanes_default = 5
+	advanced_empire_default = 0
+	fallen_empire_default = 0
+	fallen_empire_max = 0
+	core_radius = 25
+	random_hyperlanes = yes
+	system = { id = "32" name = "" position = { x = { min = 265 max = 297 } y =  { min = -366 max = -356 } }  }
+	system = { id = "33" name = "" position = { x = { min = 299 max = 331 } y =  { min = -351 max = -341 } }  }
+	system = { id = "34" name = "" position = { x = { min = 332 max = 362 } y =  { min = -334 max = -324 } }  }
+	system = { id = "35" name = "Hoek" position = { x = { min = 364 max = 394 } y =  { min = -314 max = -304 } }  }
+	system = { id = "36" name = "" position = { x = { min = 395 max = 425 } y =  { min = -289 max = -281 } }  }
+	system = { id = "37" name = "" position = { x = { min = 425 max = 453 } y =  { min = -262 max = -256 } }  }
+	system = { id = "38" name = "" position = { x = { min = -202 max = -196 } y =  { min = -11 max = 7 } }  }
+	system = { id = "39" name = "" position = { x = { min = -215 max = -209 } y =  { min = -44 max = -24 } }  }
+	system = { id = "40" name = "" position = { x = { min = -221 max = -215 } y =  { min = -69 max = -47 } }  }
+}
