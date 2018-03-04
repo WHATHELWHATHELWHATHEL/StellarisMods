@@ -6,6 +6,7 @@ static_galaxy_scenario = {
 	colonizable_planet_odds = 1.0
 	priority = 0
   default = yes
+	num_stars = 200
   num_empires = { min = 1 max = 32 }
   num_empire_default = 1
 	num_hyperlanes = { min = 5 max = 5 }
@@ -15,6 +16,7 @@ static_galaxy_scenario = {
 	fallen_empire_max = 0
 	core_radius = 25
 	random_hyperlanes = yes
+	system = { id = "1" name = "" position = { x = 1 y = 1 }  }
 	system = { id = "32" name = "" position = { x = { min = 265 max = 297 } y =  { min = -366 max = -356 } }  }
 	system = { id = "33" name = "" position = { x = { min = 299 max = 331 } y =  { min = -351 max = -341 } }  }
 	system = { id = "34" name = "" position = { x = { min = 332 max = 362 } y =  { min = -334 max = -324 } }  }
