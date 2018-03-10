@@ -5,4 +5,7 @@ const config = require('./param.json');
 const generateRandomSystem = require('./generateRandomSystem').generateSysCoords;
 const randomSystems = generateRandomSystem(config);
 
-console.log(randomSystems);
+// get the function that generate the final script code
+const generateStaticScenario = require('./generateFinalStaticScenario').generateFinalStaticScenrio;
+const testResult = generateStaticScenario(config, 0, randomSystems);
+console.log(testResult);

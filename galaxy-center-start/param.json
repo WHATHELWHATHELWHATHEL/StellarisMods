@@ -1,13 +1,15 @@
 {
   "scenariosToCreate": 50,
+  "scenariosUniversalName": "Test",
   "scenariosConfig": {
     "type": "elliptical",
-    "totalSystem": 400,
-    "minRadius": 40,
+    "totalSystem": 50,
+    "minRadius": 100,
     "maxRadius": 450,
-    "specialSystemInitializer": [
+    "specialSystems": [
       {
-        "name": "special_init_04",
+        "name": "Test Center",
+        "initializer": "special_init_04",
         "position": {
           "x":1,
           "y": 1
