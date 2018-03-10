@@ -1,0 +1,18 @@
+{
+  "scenariosToCreate": 50,
+  "scenariosConfig": {
+    "type": "elliptical",
+    "totalSystem": 400,
+    "minRadius": 40,
+    "maxRadius": 450,
+    "specialSystemInitializer": [
+      {
+        "name": "special_init_04",
+        "position": {
+          "x":1,
+          "y": 1
+        }
+      }
+    ]
+  }
+}
