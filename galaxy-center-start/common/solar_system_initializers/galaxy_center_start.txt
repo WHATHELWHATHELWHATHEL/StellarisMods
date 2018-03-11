@@ -64,12 +64,15 @@ inner_ringworld = {
 	class = "sc_g"
 
 	planet = {
-		name = "NAME_Sol"
+		name = "Center"
 		class = "pc_g_star"
 		orbit_distance = 0
 		orbit_angle = 1
 		size = 30
 		has_ring = no
+		init_effect = {
+			orbital_deposit_tile = { clear_deposits = yes }
+		}
 	}
 
 	change_orbit = 45
@@ -102,12 +105,15 @@ inner_destory_world = {
 	asteroids_distance = 150
 
 	planet = {
-		count = 1
-		class = star
+		name = "NAME_Center"
+		class = "pc_g_star"
 		orbit_distance = 0
 		orbit_angle = 1
-		size = { min = 20 max = 30 }
+		size = 30
 		has_ring = no
+		init_effect = {
+			orbital_deposit_tile = { clear_deposits = yes }
+		}
 	}
 
 	change_orbit = 45
