@@ -1,10 +1,11 @@
 ### very center of the galaxy
 very_center_system = {
-	name = "Ringworld"
+	name = "Settlement"
 	class = "sc_g"
 	flags = { very_galaxy_center }
+	usage = custom_empire
 	planet = {
-		name = "NAME_Core"
+		name = "Core"
 		class = "pc_g_star"
 		orbit_distance = 0
 		orbit_angle = 1
@@ -13,7 +14,7 @@ very_center_system = {
 	}
 
 	planet = {
-		name = "NAME_Settlement"
+		name = "Settlement"
 		class = "pc_gaia"
 		orbit_distance = 1
 		orbit_angle = 1
