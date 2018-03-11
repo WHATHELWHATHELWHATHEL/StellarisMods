@@ -17,14 +17,18 @@ const finalScript = generateStaticScenario(config, 0, randomSystems.concat(speci
 const fs = require('fs');
 const dataBuffer = new Buffer(finalScript);
 
-fs.writeFile(
-  `${__dirname}/map/setup_scenarios/test.txt`,
-  dataBuffer,
-  (error, result) => {
-    if (error) {
-      console.log(`write fail: ${JSON.stringify(error)}`);
-    } else {
-      console.log('write success');
-    }
-  },
-);
+const { scenariosToCreate } = config;
+
+for (let index = 0; index < scenariosToCreate; index += 1) {
+  fs.writeFile(
+    `${__dirname}/map/setup_scenarios/test${index}.txt`,
+    dataBuffer,
+    (error, result) => {
+      if (error) {
+        console.log(`write fail: ${JSON.stringify(error)}`);
+      } else {
+        console.log('write success');
+      }
+    },
+  );
+}

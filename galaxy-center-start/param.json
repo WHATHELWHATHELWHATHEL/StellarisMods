@@ -4,8 +4,8 @@
   "scenariosConfig": {
     "type": "elliptical",
     "totalSystem": 1200,
-    "minRadius": 150,
-    "maxRadius": 550,
+    "minRadius": 160,
+    "maxRadius": 600,
     "specialSystems": [
       {
         "name": "Test Center",
