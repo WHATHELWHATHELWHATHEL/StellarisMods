@@ -1,8 +1,8 @@
 const createRandomSystem = (id, minR, gapR) => {
   const randDegree = parseInt(Math.random() * 360, 10);
-  const randDegreeValue = parseInt((randDegree * Math.PI) / 180, 10);
+  const randDegreeValue = (randDegree * 180) / Math.PI;
   const randDistance = parseInt(
-    minR + (gapR * Math.random() * Math.sqrt(Math.random())),
+    minR + (gapR * Math.random() * Math.pow(Math.random(), 1 / 5)),
     10,
   );
   const x = parseInt(randDistance * Math.cos(randDegreeValue), 10);

@@ -16,6 +16,7 @@ module.exports = {
       fallen_empire_default = 0
       fallen_empire_max = 0
       random_hyperlanes = yes
+      core_radius = 1
       ${systemsCoord.join('\n      ')}
     }
     `;

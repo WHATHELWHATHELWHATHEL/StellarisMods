@@ -1,0 +1,1 @@
+core_radius_perc = 0.01				# Core radius is 30% of the galaxy radius
