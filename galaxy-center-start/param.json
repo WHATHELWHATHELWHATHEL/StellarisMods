@@ -10,10 +10,7 @@
       {
         "name": "Test Center",
         "initializer": "special_init_04",
-        "position": {
-          "x":1,
-          "y": 1
-        }
+        "position": { "x":1, "y": 1 }
       }
     ]
   }

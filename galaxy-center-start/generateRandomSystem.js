@@ -7,7 +7,7 @@ const createRandomSystem = (id, minR, gapR) => {
   );
   const x = parseInt(randDistance * Math.cos(randDegreeValue), 10);
   const y = parseInt(randDistance * Math.sin(randDegreeValue), 10);
-  return `system = { id = \"${id}\" name = "" position = { x = ${x} y = ${y}  }  }`;
+  return `system = { id = \"${id}\" name = "" position = { x = ${x} y = ${y}  }}`;
 };
 
 module.exports = {

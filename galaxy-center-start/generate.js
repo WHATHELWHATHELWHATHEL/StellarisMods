@@ -5,9 +5,13 @@ const config = require('./param.json');
 const generateRandomSystem = require('./generateRandomSystem').generateSysCoords;
 const randomSystems = generateRandomSystem(config);
 
+// then generate the given special systems
+const generateSpecialSystem = require('./generateSpecialSystem').generateSpeicalSystems;
+const specialSystem = generateSpecialSystem(config, randomSystems.length);
+
 // get the function that generate the final script code
 const generateStaticScenario = require('./generateFinalStaticScenario').generateFinalStaticScenrio;
-const finalScript = generateStaticScenario(config, 0, randomSystems);
+const finalScript = generateStaticScenario(config, 0, randomSystems.concat(specialSystem));
 
 // then output the result to the setup_scenarios
 const fs = require('fs');
