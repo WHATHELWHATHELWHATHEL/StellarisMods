@@ -14,7 +14,7 @@
       },
       {
         "name": "Test Inner 0",
-        "initializer": "special_init_04",
+        "initializer": "inner_ringworld",
         "position": { "x":0, "y": 20, "z": 0 }
       },
       {
@@ -24,7 +24,7 @@
       },
       {
         "name": "Test Inner 2",
-        "initializer": "special_init_04",
+        "initializer": "inner_ringworld",
         "position": { "x": 17, "y": -10, "z": 0 }
       },
       {
@@ -34,7 +34,7 @@
       },
       {
         "name": "Test Inner 4",
-        "initializer": "special_init_04",
+        "initializer": "inner_ringworld",
         "position": { "x":-17, "y": -10, "z": 0 }
       },
       {

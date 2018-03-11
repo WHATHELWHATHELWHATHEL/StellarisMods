@@ -1,0 +1,37 @@
+### Cybrex Home System
+inner_ringworld = {
+	name = "Ringworld"
+	class = "sc_g"
+	
+	planet = {
+		name = "NAME_Sol"
+		class = "pc_g_star"
+		orbit_distance = 0
+		orbit_angle = 1
+		size = 30
+		has_ring = no
+	}
+
+	change_orbit = 45
+
+	init_effect = {
+		spawn_megastructure = {
+			type = "ring_world_31_intermediate"
+			orbit_angle = 0
+			orbit_distance = 45
+			location = planet
+		}
+		spawn_megastructure = {
+			type = "ring_world_32_intermediate"
+			orbit_angle = 120
+			orbit_distance = 45
+			location = planet
+		}
+		spawn_megastructure = {
+			type = "ring_world_33_intermediate"
+			orbit_angle = 240
+			orbit_distance = 45
+			location = planet
+		}
+	}
+}

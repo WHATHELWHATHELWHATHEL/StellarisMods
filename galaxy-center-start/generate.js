@@ -19,10 +19,11 @@ const dataBuffer = new Buffer(finalScript);
 
 const { scenariosToCreate } = config;
 
-for (let index = 0; index < scenariosToCreate; index += 1) {
+for (let index = 0; index < 1; index += 1) {
+  const systems = randomSystems.concat(specialSystem);
   fs.writeFile(
     `${__dirname}/map/setup_scenarios/test${index}.txt`,
-    dataBuffer,
+    new Buffer(finalScript),
     (error, result) => {
       if (error) {
         console.log(`write fail: ${JSON.stringify(error)}`);
