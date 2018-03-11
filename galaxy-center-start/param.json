@@ -1,5 +1,5 @@
 {
-  "scenariosToCreate": 50,
+  "scenariosToCreate": 10,
   "scenariosUniversalName": "Test",
   "scenariosConfig": {
     "type": "elliptical",
@@ -9,7 +9,7 @@
     "specialSystems": [
       {
         "name": "Test Center",
-        "initializer": "special_init_04",
+        "initializer": "very_center_system",
         "position": { "x":1, "y": 1, "z": 0 }
       },
       {
@@ -19,7 +19,7 @@
       },
       {
         "name": "Test Inner 1",
-        "initializer": "special_init_04",
+        "initializer": "inner_destory_world",
         "position": { "x": 17, "y": 10, "z": 0 }
       },
       {
@@ -29,7 +29,7 @@
       },
       {
         "name": "Test Inner 3",
-        "initializer": "special_init_04",
+        "initializer": "inner_destory_world",
         "position": { "x":0, "y": -20, "z": 0 }
       },
       {
@@ -39,67 +39,67 @@
       },
       {
         "name": "Test Inner 5",
-        "initializer": "special_init_04",
+        "initializer": "inner_destory_world",
         "position": { "x": -17, "y": 10, "z": 0 }
       },
       {
         "name": "Test Outer 0",
-        "initializer": "special_init_04",
+        "initializer": "inner_destory_world",
         "position": { "x": 10, "y": 38, "z": 0 }
       },
       {
         "name": "Test Outer 1",
-        "initializer": "special_init_04",
+        "initializer": "inner_destory_world",
         "position": { "x": 28, "y": 28, "z": 0 }
       },
       {
         "name": "Test Outer 2",
-        "initializer": "special_init_04",
+        "initializer": "inner_destory_world",
         "position": { "x": 38, "y": 10, "z": 0 }
       },
       {
         "name": "Test Outer 3",
-        "initializer": "special_init_04",
+        "initializer": "inner_destory_world",
         "position": { "x": 38, "y": -10, "z": 0 }
       },
       {
         "name": "Test Outer 4",
-        "initializer": "special_init_04",
+        "initializer": "inner_destory_world",
         "position": { "x": 28, "y": -28, "z": 0 }
       },
       {
         "name": "Test Outer 5",
-        "initializer": "special_init_04",
+        "initializer": "inner_destory_world",
         "position": { "x": 10, "y": -38, "z": 0 }
       },
       {
         "name": "Test Outer 6",
-        "initializer": "special_init_04",
+        "initializer": "inner_destory_world",
         "position": { "x": -10, "y": -38, "z": 0 }
       },
       {
         "name": "Test Outer 7",
-        "initializer": "special_init_04",
+        "initializer": "inner_destory_world",
         "position": { "x": -28, "y": -28, "z": 0 }
       },
       {
         "name": "Test Outer 8",
-        "initializer": "special_init_04",
+        "initializer": "inner_destory_world",
         "position": { "x": -38, "y": -10, "z": 0 }
       },
       {
         "name": "Test Outer 9",
-        "initializer": "special_init_04",
+        "initializer": "inner_destory_world",
         "position": { "x": -38, "y": 10, "z": 0 }
       },
       {
         "name": "Test Outer 10",
-        "initializer": "special_init_04",
+        "initializer": "inner_destory_world",
         "position": { "x": -28, "y": 28, "z": 0 }
       },
       {
         "name": "Test Outer 11",
-        "initializer": "special_init_04",
+        "initializer": "inner_destory_world",
         "position": { "x": -10, "y": 38, "z": 0 }
       }
     ]

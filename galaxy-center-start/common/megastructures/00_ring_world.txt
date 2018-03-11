@@ -249,7 +249,7 @@ ring_world_31_intermediate = {
 				}
 				every_tile = {
 					limit = { has_building = no has_blocker = no has_pop = no }
-					set_deposit = d_vast_mineral_deposit
+					set_deposit = d_rich_mineral_deposit
 				}
 				save_event_target_as = ring_section
 				trigger_megastructure_icon = yes
@@ -395,7 +395,7 @@ ring_world_32_intermediate = {
 				}
 				every_tile = {
 					limit = { has_building = no has_blocker = no has_pop = no }
-					set_deposit = d_vast_energy_deposit
+					set_deposit = d_rich_energy_deposit
 				}
 				save_event_target_as = ring_section
 				trigger_megastructure_icon = yes
