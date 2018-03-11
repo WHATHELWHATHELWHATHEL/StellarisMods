@@ -1,0 +1,4 @@
+	NGraphics = {
+		RANDOM_HEIGHT_MIN = -4.0
+		RANDOM_HEIGHT_MAX = 4.0
+	}
