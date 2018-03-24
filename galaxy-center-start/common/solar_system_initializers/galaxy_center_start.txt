@@ -29,10 +29,6 @@ very_center_system = {
 				limit = { has_building = no has_blocker = no has_pop = no }
 				set_deposit = d_null_deposit
 			}
-			random_tile = {
-				limit = { has_building = no has_blocker = no num_adjacent_tiles > 3 }
-				set_building = "building_capital_2"
-			}
 		}
 	}
 

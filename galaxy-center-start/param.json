@@ -10,7 +10,8 @@
       {
         "name": "Test Center",
         "initializer": "very_center_system",
-        "position": { "x":1, "y": 1, "z": 0 }
+        "position": { "x":1, "y": 1, "z": 0 },
+        "specialConfig": "spawn_weight = { base = 0 }"
       },
       {
         "name": "Test Inner 0",
