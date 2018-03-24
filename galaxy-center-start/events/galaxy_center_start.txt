@@ -1,0 +1,55 @@
+namespace = game_start
+
+### Change home world system for galaxy center start
+country_event = {
+	id = game_start.999
+	hide_window = yes
+	is_triggered_only = yes
+
+	# only triggered for center start
+	trigger = {
+		solar_system = { has_star_flag = very_galaxy_center }
+	}
+
+	immediate = {
+    # reset pop to gaia peferrence
+		every_owned_pop = {
+			modify_species = {
+				species = this
+				ideal_planet_class = pc_gaia
+				base = none # makes this replace parent species
+			}
+		}
+    # change the capital to 25 size
+		random_owned_planet = {
+			limit = { is_capital = yes }
+			change_pc = pc_gaia
+			# create 2 more pop
+	    random_tile = {
+				limit = {
+					has_blocker = no
+					has_grown_pop = no
+					has_growing_pop = no
+				}
+				create_pop = {
+					species = last_created
+				}
+			}
+	    random_tile = {
+				limit = {
+					has_blocker = no
+					has_grown_pop = no
+					has_growing_pop = no
+				}
+				create_pop = {
+					species = last_created
+				}
+			}
+			set_planet_size = 25
+			every_tile = {
+				set_deposit = d_null_deposit
+			}
+		}
+		change_dominant_species = { species = last_created change_all = yes }
+	}
+}
