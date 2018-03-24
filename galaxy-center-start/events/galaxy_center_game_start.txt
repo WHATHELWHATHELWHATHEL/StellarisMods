@@ -1,0 +1,48 @@
+# override the origin staff to create 9 pop at start
+planet_event = {
+	id = game_start.12
+	hide_window = yes
+	is_triggered_only = yes
+
+	immediate = {
+		from = {
+			if = { limit = { is_species_class = MACHINE }
+				apply_robotic_pop_growth_behavior = yes
+			}
+		}
+
+		if = { limit = { owner = { has_valid_civic = civic_mechanists } }
+			while = {
+				count = 2
+				random_tile = {
+					limit = {
+						has_building = building_mining_network_1
+						has_pop = no
+					}
+					build_pop = {
+						name = buildable_robot_pop_1
+					}
+				}
+			}
+		}
+
+		while = {
+			limit = {
+				OR = {
+					AND = {
+						owner = { NOT = { has_valid_civic = civic_machine_servitor } }
+						num_pops < 9
+					}
+					AND = {
+						owner = { has_valid_civic = civic_machine_servitor }
+						num_pops < 10	# 2 extra pops are useless bio trophies, see game_start.11
+					}
+				}
+			}
+			create_pop = {
+				species = owner_main_species
+				ethos = random
+			}
+		}
+	}
+}

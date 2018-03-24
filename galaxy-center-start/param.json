@@ -1,0 +1,123 @@
+{
+  "scenariosToCreate": 10,
+  "scenariosUniversalName": "Test",
+  "scenariosConfig": {
+    "type": "elliptical",
+    "totalSystem": 1200,
+    "minRadius": 160,
+    "maxRadius": 600,
+    "specialSystems": [
+      {
+        "name": "Test Center",
+        "initializer": "very_center_system",
+        "position": { "x":1, "y": 1, "z": 0 },
+        "specialConfig": "spawn_weight = { base = 0 modifier = { add = 100000 STH_starting_country = no } }"
+      },
+      {
+        "name": "Test Inner 0",
+        "initializer": "inner_ringworld",
+        "position": { "x":0, "y": 20, "z": 0 }
+      },
+      {
+        "name": "Test Inner 1",
+        "initializer": "inner_destory_world",
+        "position": { "x": 17, "y": 10, "z": 0 }
+      },
+      {
+        "name": "Test Inner 2",
+        "initializer": "inner_ringworld",
+        "position": { "x": 17, "y": -10, "z": 0 }
+      },
+      {
+        "name": "Test Inner 3",
+        "initializer": "inner_destory_world",
+        "position": { "x":0, "y": -20, "z": 0 }
+      },
+      {
+        "name": "Test Inner 4",
+        "initializer": "inner_ringworld",
+        "position": { "x":-17, "y": -10, "z": 0 }
+      },
+      {
+        "name": "Test Inner 5",
+        "initializer": "inner_destory_world",
+        "position": { "x": -17, "y": 10, "z": 0 }
+      },
+      {
+        "name": "Test Outer 0",
+        "initializer": "inner_destory_world",
+        "position": { "x": 10, "y": 38, "z": 0 }
+      },
+      {
+        "name": "Test Outer 1",
+        "initializer": "inner_destory_world",
+        "position": { "x": 28, "y": 28, "z": 0 }
+      },
+      {
+        "name": "Test Outer 2",
+        "initializer": "inner_destory_world",
+        "position": { "x": 38, "y": 10, "z": 0 }
+      },
+      {
+        "name": "Test Outer 3",
+        "initializer": "inner_destory_world",
+        "position": { "x": 38, "y": -10, "z": 0 }
+      },
+      {
+        "name": "Test Outer 4",
+        "initializer": "inner_destory_world",
+        "position": { "x": 28, "y": -28, "z": 0 }
+      },
+      {
+        "name": "Test Outer 5",
+        "initializer": "inner_destory_world",
+        "position": { "x": 10, "y": -38, "z": 0 }
+      },
+      {
+        "name": "Test Outer 6",
+        "initializer": "inner_destory_world",
+        "position": { "x": -10, "y": -38, "z": 0 }
+      },
+      {
+        "name": "Test Outer 7",
+        "initializer": "inner_destory_world",
+        "position": { "x": -28, "y": -28, "z": 0 }
+      },
+      {
+        "name": "Test Outer 8",
+        "initializer": "inner_destory_world",
+        "position": { "x": -38, "y": -10, "z": 0 }
+      },
+      {
+        "name": "Test Outer 9",
+        "initializer": "inner_destory_world",
+        "position": { "x": -38, "y": 10, "z": 0 }
+      },
+      {
+        "name": "Test Outer 10",
+        "initializer": "inner_destory_world",
+        "position": { "x": -28, "y": 28, "z": 0 }
+      },
+      {
+        "name": "Test Outer 11",
+        "initializer": "inner_destory_world",
+        "position": { "x": -10, "y": 38, "z": 0 }
+      },
+      {
+        "name": "Connect 1",
+        "initializer": "inner_destory_world",
+        "position": { "x": 0, "y": 100, "z": 0 }
+      },
+      {
+        "name": "Connect 2",
+        "initializer": "inner_destory_world",
+        "position": { "x": 87, "y": -50, "z": 0 }
+      },
+      {
+        "name": "Connect 3",
+        "initializer": "inner_destory_world",
+        "position": { "x": -87, "y": -50, "z": 0 }
+      }
+    ]
+  }
+}
