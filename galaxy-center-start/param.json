@@ -102,6 +102,21 @@
         "name": "Test Outer 11",
         "initializer": "inner_destory_world",
         "position": { "x": -10, "y": 38, "z": 0 }
+      },
+      {
+        "name": "Connect 1",
+        "initializer": "inner_destory_world",
+        "position": { "x": 0, "y": 100, "z": 0 }
+      },
+      {
+        "name": "Connect 2",
+        "initializer": "inner_destory_world",
+        "position": { "x": 87, "y": -50, "z": 0 }
+      },
+      {
+        "name": "Connect 3",
+        "initializer": "inner_destory_world",
+        "position": { "x": -87, "y": -50, "z": 0 }
       }
     ]
   }
