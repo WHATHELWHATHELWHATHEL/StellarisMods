@@ -81,7 +81,7 @@ on_game_start_country = {
 		syndaw.101 # servitor morale
 		game_start.32
 		game_start.34
-		game_start.999 # change the home world system for galaxy start
+		center_start.999 # change the home world system for galaxy start
 	}
 }
 

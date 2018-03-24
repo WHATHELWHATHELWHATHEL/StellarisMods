@@ -1,8 +1,8 @@
-namespace = game_start
+namespace = center_start
 
 ### Change home world system for galaxy center start
 country_event = {
-	id = game_start.999
+	id = center_start.999
 	hide_window = yes
 	is_triggered_only = yes
 
