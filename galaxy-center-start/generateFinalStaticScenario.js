@@ -4,7 +4,7 @@ module.exports = {
   ) => {
     return `
     static_galaxy_scenario = {
-      name = \"${scenariosUniversalName}_${scenarioIndex}\"
+      name = \"${scenariosUniversalName} ${scenarioIndex}\"
       colonizable_planet_odds = 1.0
       priority = 0
       default = yes

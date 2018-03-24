@@ -1,6 +1,6 @@
 {
   "scenariosToCreate": 10,
-  "scenariosUniversalName": "Test",
+  "scenariosUniversalName": "Center Start",
   "scenariosConfig": {
     "type": "elliptical",
     "totalSystem": 1200,
