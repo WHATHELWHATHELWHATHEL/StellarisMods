@@ -11,7 +11,7 @@
         "name": "Test Center",
         "initializer": "very_center_system",
         "position": { "x":1, "y": 1, "z": 0 },
-        "specialConfig": "spawn_weight = { base = 0 }"
+        "specialConfig": "spawn_weight = { base = 0 modifier = { add = 100000 STH_starting_country = no } }"
       },
       {
         "name": "Test Inner 0",

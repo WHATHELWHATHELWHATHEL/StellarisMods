@@ -1,0 +1,9 @@
+STH_starting_country = {
+	OR = {
+		has_country_flag = alpha_beta_empire
+		has_country_flag = alpha_empire
+		has_country_flag = beta_empire
+		has_country_flag = gamma_empire
+		has_country_flag = delta_empire
+	}
+}
