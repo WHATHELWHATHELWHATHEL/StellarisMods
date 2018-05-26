@@ -8,7 +8,7 @@ habitat_0 = {
 	entity_offset = { x = 0 y = 0 }
 	build_time = 1800
 	build_cost = {
-		minerals = 5000
+		minerals = 10000
 	}
 	construction_blocks_others = no
 

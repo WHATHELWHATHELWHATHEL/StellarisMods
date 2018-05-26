@@ -4,4 +4,4 @@ tags={
 	"Buildings"
 	"Balance"
 }
-supported_version="2.0.*"
+supported_version="2.1.*"
