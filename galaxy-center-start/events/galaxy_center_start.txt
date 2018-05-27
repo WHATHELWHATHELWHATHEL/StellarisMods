@@ -1,0 +1,533 @@
+namespace = galcen
+
+# create outer 3
+country_event = {
+	id = galcen.1
+	hide_window = yes
+
+	is_triggered_only = yes
+
+	immediate = {
+		# inner begin
+		set_spawn_system_batch = begin
+		# batch-processes the spawn_system effects between "begin" and "end",
+		# so caches are recalculated only once rather than for every system spawned
+		# can also be used when removing and adding hyperlanes
+		no_scope = {
+			# makes system positions originate from galactic core
+			spawn_system = {
+				min_distance >= 75
+				max_distance <= 76
+				min_orientation_angle = 0
+				max_orientation_angle = 1
+				initializer = basic_init_galcen_choke1
+			}
+			spawn_system = {
+				min_distance >= 75
+				max_distance <= 76
+				min_orientation_angle = 120
+				max_orientation_angle = 121
+				initializer = basic_init_galcen_choke2
+			}
+			spawn_system = {
+				min_distance >= 75
+				max_distance <= 76
+				min_orientation_angle = 240
+				max_orientation_angle = 241
+				initializer = basic_init_galcen_choke3
+			}
+		}
+		set_spawn_system_batch = end
+	}
+}
+
+# spawn inner part
+country_event = {
+	id = galcen.2
+	hide_window = yes
+
+	is_triggered_only = yes
+
+	immediate = {
+		# inner begin
+		set_spawn_system_batch = begin
+		# batch-processes the spawn_system effects between "begin" and "end",
+		# so caches are recalculated only once rather than for every system spawned
+		# can also be used when removing and adding hyperlanes
+		no_scope = {
+			# makes system positions originate from galactic core
+			spawn_system = {
+				min_distance >= 0
+				max_distance <= 1
+				min_orientation_angle = 44
+				max_orientation_angle = 46
+				initializer = basic_init_galcen
+			}
+			spawn_system = {
+				min_distance >= 15
+				max_distance <= 16
+				min_orientation_angle = 0
+				max_orientation_angle = 1
+				initializer = basic_init_galcen_inner1
+			}
+			spawn_system = {
+				min_distance >= 15
+				max_distance <= 16
+				min_orientation_angle = 60
+				max_orientation_angle = 61
+				initializer = basic_init_galcen_inner2
+			}
+			spawn_system = {
+				min_distance >= 15
+				max_distance <= 16
+				min_orientation_angle = 120
+				max_orientation_angle = 121
+				initializer = basic_init_galcen_inner3
+			}
+			spawn_system = {
+				min_distance >= 15
+				max_distance <= 16
+				min_orientation_angle = 180
+				max_orientation_angle = 181
+				initializer = basic_init_galcen_inner4
+			}
+			spawn_system = {
+				min_distance >= 15
+				max_distance <= 16
+				min_orientation_angle = 240
+				max_orientation_angle = 241
+				initializer = basic_init_galcen_inner5
+			}
+			spawn_system = {
+				min_distance >= 15
+				max_distance <= 16
+				min_orientation_angle = 300
+				max_orientation_angle = 301
+				initializer = basic_init_galcen_inner6
+			}
+			# outer 12 systems
+			spawn_system = {
+				min_distance >= 30
+				max_distance <= 31
+				min_orientation_angle = 15
+				max_orientation_angle = 16
+				initializer = basic_init_galcen_outer1
+			}
+			spawn_system = {
+				min_distance >= 30
+				max_distance <= 31
+				min_orientation_angle = 45
+				max_orientation_angle = 46
+				initializer = basic_init_galcen_outer2
+			}
+			spawn_system = {
+				min_distance >= 30
+				max_distance <= 31
+				min_orientation_angle = 75
+				max_orientation_angle = 76
+				initializer = basic_init_galcen_outer3
+			}
+			spawn_system = {
+				min_distance >= 30
+				max_distance <= 31
+				min_orientation_angle = 105
+				max_orientation_angle = 106
+				initializer = basic_init_galcen_outer4
+			}
+			spawn_system = {
+				min_distance >= 30
+				max_distance <= 31
+				min_orientation_angle = 135
+				max_orientation_angle = 136
+				initializer = basic_init_galcen_outer5
+			}
+			spawn_system = {
+				min_distance >= 30
+				max_distance <= 31
+				min_orientation_angle = 165
+				max_orientation_angle = 166
+				initializer = basic_init_galcen_outer6
+			}
+			spawn_system = {
+				min_distance >= 30
+				max_distance <= 31
+				min_orientation_angle = 195
+				max_orientation_angle = 196
+				initializer = basic_init_galcen_outer7
+			}
+			spawn_system = {
+				min_distance >= 30
+				max_distance <= 31
+				min_orientation_angle = 225
+				max_orientation_angle = 226
+				initializer = basic_init_galcen_outer8
+			}
+			spawn_system = {
+				min_distance >= 30
+				max_distance <= 31
+				min_orientation_angle = 255
+				max_orientation_angle = 256
+				initializer = basic_init_galcen_outer9
+			}
+			spawn_system = {
+				min_distance >= 30
+				max_distance <= 31
+				min_orientation_angle = 285
+				max_orientation_angle = 286
+				initializer = basic_init_galcen_outer10
+			}
+			spawn_system = {
+				min_distance >= 30
+				max_distance <= 31
+				min_orientation_angle = 315
+				max_orientation_angle = 316
+				initializer = basic_init_galcen_outer11
+			}
+			spawn_system = {
+				min_distance >= 30
+				max_distance <= 31
+				min_orientation_angle = 345
+				max_orientation_angle = 346
+				initializer = basic_init_galcen_outer12
+			}
+		}
+		# clear the hyper lane
+		every_system = {
+			limit = { has_star_flag = galiso }
+			isolate_system = yes
+		}
+		# connect the center system to inner cycle
+		random_system = {
+			limit = { has_star_flag = galcen }
+			while = {
+				limit = {
+					any_system = {
+						has_star_flag = ratling_system
+						NOT = { has_hyperlane_to = prev }
+					}
+				}
+				random_system = {
+					limit = {
+						has_star_flag = galinn
+						NOT = { has_hyperlane_to = prev }
+					}
+					add_hyperlane = { from = this to = prev }
+				}
+			}
+		}
+		# create the system objects and connect them two by two
+		random_system = {
+			limit = { has_star_flag = galinn1 }
+			save_global_event_target_as = galinn1
+		}
+		random_system = {
+			limit = { has_star_flag = galinn2 }
+			save_global_event_target_as = galinn2
+		}
+		random_system = {
+			limit = { has_star_flag = galinn3 }
+			save_global_event_target_as = galinn3
+		}
+		random_system = {
+			limit = { has_star_flag = galinn4 }
+			save_global_event_target_as = galinn4
+		}
+		random_system = {
+			limit = { has_star_flag = galinn5 }
+			save_global_event_target_as = galinn5
+		}
+		random_system = {
+			limit = { has_star_flag = galinn6 }
+			save_global_event_target_as = galinn6
+		}
+		# connect the inner two by two
+		event_target:galinn1 = {
+			add_hyperlane = {
+				from = event_target:galinn1
+				to = event_target:galinn2
+			}
+		}
+		event_target:galinn2 = {
+			add_hyperlane = {
+				from = event_target:galinn2
+				to = event_target:galinn3
+			}
+		}
+		event_target:galinn3 = {
+			add_hyperlane = {
+				from = event_target:galinn3
+				to = event_target:galinn4
+			}
+		}
+		event_target:galinn4 = {
+			add_hyperlane = {
+				from = event_target:galinn4
+				to = event_target:galinn5
+			}
+		}
+		event_target:galinn5 = {
+			add_hyperlane = {
+				from = event_target:galinn5
+				to = event_target:galinn6
+			}
+		}
+		event_target:galinn5 = {
+			add_hyperlane = {
+				from = event_target:galinn5
+				to = event_target:galinn6
+			}
+		}
+		event_target:galinn6 = {
+			add_hyperlane = {
+				from = event_target:galinn6
+				to = event_target:galinn1
+			}
+		}
+		# create outer 12 system
+		random_system = {
+			limit = { has_star_flag = galout1 }
+			save_global_event_target_as = galout1
+		}
+		random_system = {
+			limit = { has_star_flag = galout2 }
+			save_global_event_target_as = galout2
+		}
+		random_system = {
+			limit = { has_star_flag = galout3 }
+			save_global_event_target_as = galout3
+		}
+		random_system = {
+			limit = { has_star_flag = galout4 }
+			save_global_event_target_as = galout4
+		}
+		random_system = {
+			limit = { has_star_flag = galout5 }
+			save_global_event_target_as = galout5
+		}
+		random_system = {
+			limit = { has_star_flag = galout6 }
+			save_global_event_target_as = galout6
+		}
+		random_system = {
+			limit = { has_star_flag = galout7 }
+			save_global_event_target_as = galout7
+		}
+		random_system = {
+			limit = { has_star_flag = galout8 }
+			save_global_event_target_as = galout8
+		}
+		random_system = {
+			limit = { has_star_flag = galout9 }
+			save_global_event_target_as = galout9
+		}
+		random_system = {
+			limit = { has_star_flag = galout10 }
+			save_global_event_target_as = galout10
+		}
+		random_system = {
+			limit = { has_star_flag = galout11 }
+			save_global_event_target_as = galout11
+		}
+		random_system = {
+			limit = { has_star_flag = galout12 }
+			save_global_event_target_as = galout12
+		}
+		# connect 12 system 2 by two
+		event_target:galout1 = {
+			add_hyperlane = {
+				from = event_target:galout1
+				to = event_target:galout2
+			}
+		}
+		event_target:galout2 = {
+			add_hyperlane = {
+				from = event_target:galout2
+				to = event_target:galout3
+			}
+		}
+		event_target:galout3 = {
+			add_hyperlane = {
+				from = event_target:galout3
+				to = event_target:galout4
+			}
+		}
+		event_target:galout4 = {
+			add_hyperlane = {
+				from = event_target:galout4
+				to = event_target:galout5
+			}
+		}
+		event_target:galout5 = {
+			add_hyperlane = {
+				from = event_target:galout5
+				to = event_target:galout6
+			}
+		}
+		event_target:galout6 = {
+			add_hyperlane = {
+				from = event_target:galout6
+				to = event_target:galout7
+			}
+		}
+		event_target:galout7 = {
+			add_hyperlane = {
+				from = event_target:galout7
+				to = event_target:galout8
+			}
+		}
+		event_target:galout8 = {
+			add_hyperlane = {
+				from = event_target:galout8
+				to = event_target:galout9
+			}
+		}
+		event_target:galout9 = {
+			add_hyperlane = {
+				from = event_target:galout9
+				to = event_target:galout10
+			}
+		}
+		event_target:galout10 = {
+			add_hyperlane = {
+				from = event_target:galout10
+				to = event_target:galout11
+			}
+		}
+		event_target:galout11 = {
+			add_hyperlane = {
+				from = event_target:galout11
+				to = event_target:galout12
+			}
+		}
+		event_target:galout12 = {
+			add_hyperlane = {
+				from = event_target:galout12
+				to = event_target:galout1
+			}
+		}
+		# connect the inner to outer ring
+		event_target:galinn1 = {
+			add_hyperlane = {
+				from = event_target:galinn1
+				to = event_target:galout12
+			}
+		}
+		event_target:galinn1 = {
+			add_hyperlane = {
+				from = event_target:galinn1
+				to = event_target:galout1
+			}
+		}
+		event_target:galinn2 = {
+			add_hyperlane = {
+				from = event_target:galinn2
+				to = event_target:galout2
+			}
+		}
+		event_target:galinn2 = {
+			add_hyperlane = {
+				from = event_target:galinn2
+				to = event_target:galout3
+			}
+		}
+		event_target:galinn3 = {
+			add_hyperlane = {
+				from = event_target:galinn3
+				to = event_target:galout4
+			}
+		}
+		event_target:galinn3 = {
+			add_hyperlane = {
+				from = event_target:galinn3
+				to = event_target:galout5
+			}
+		}
+		event_target:galinn4 = {
+			add_hyperlane = {
+				from = event_target:galinn4
+				to = event_target:galout6
+			}
+		}
+		event_target:galinn4 = {
+			add_hyperlane = {
+				from = event_target:galinn4
+				to = event_target:galout7
+			}
+		}
+		event_target:galinn5 = {
+			add_hyperlane = {
+				from = event_target:galinn5
+				to = event_target:galout8
+			}
+		}
+		event_target:galinn5 = {
+			add_hyperlane = {
+				from = event_target:galinn5
+				to = event_target:galout9
+			}
+		}
+		event_target:galinn6 = {
+			add_hyperlane = {
+				from = event_target:galinn6
+				to = event_target:galout10
+			}
+		}
+		event_target:galinn6 = {
+			add_hyperlane = {
+				from = event_target:galinn6
+				to = event_target:galout11
+			}
+		}
+		# create choke point system
+		random_system = {
+			limit = { has_star_flag = choke1 }
+			save_global_event_target_as = choke1
+		}
+		random_system = {
+			limit = { has_star_flag = choke2 }
+			save_global_event_target_as = choke2
+		}
+		random_system = {
+			limit = { has_star_flag = choke3 }
+			save_global_event_target_as = choke3
+		}
+		# connect choke to outer
+		event_target:choke1 = {
+			add_hyperlane = {
+				from = event_target:choke1
+				to = event_target:galout12
+			}
+		}
+		event_target:choke1 = {
+			add_hyperlane = {
+				from = event_target:choke1
+				to = event_target:galout1
+			}
+		}
+		event_target:choke2 = {
+			add_hyperlane = {
+				from = event_target:choke2
+				to = event_target:galout4
+			}
+		}
+		event_target:choke2 = {
+			add_hyperlane = {
+				from = event_target:choke2
+				to = event_target:galout5
+			}
+		}
+		event_target:choke3 = {
+			add_hyperlane = {
+				from = event_target:choke3
+				to = event_target:galout8
+			}
+		}
+		event_target:choke3 = {
+			add_hyperlane = {
+				from = event_target:choke3
+				to = event_target:galout9
+			}
+		}
+		set_spawn_system_batch = end
+	}
+}
