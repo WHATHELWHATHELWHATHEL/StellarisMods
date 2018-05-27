@@ -8,7 +8,7 @@ basic_init_galcen = {
 		class = star
 		orbit_distance = 0
 		orbit_angle = 1
-		size = 1
+		size = 30
 		has_ring = no
 	}
 
@@ -29,6 +29,12 @@ basic_init_galcen = {
 			type = ring_world_33_intermediate
 			orbit_angle = 240
 			orbit_distance = 40
+			location = solar_system
+		}
+		spawn_megastructure = {
+			type = habitat_0
+			orbit_angle = 1
+			orbit_distance = 1
 			location = solar_system
 		}
 	}
@@ -65,6 +71,12 @@ basic_init_galcen_inner1 = {
 			type = ring_world_33_intermediate
 			orbit_angle = 240
 			orbit_distance = 40
+			location = solar_system
+		}
+		spawn_megastructure = {
+			type = habitat_0
+			orbit_angle = 1
+			orbit_distance = 1
 			location = solar_system
 		}
 	}
@@ -135,6 +147,12 @@ basic_init_galcen_inner3 = {
 			orbit_distance = 40
 			location = solar_system
 		}
+		spawn_megastructure = {
+			type = habitat_0
+			orbit_angle = 1
+			orbit_distance = 1
+			location = solar_system
+		}
 	}
 }
 
@@ -201,6 +219,12 @@ basic_init_galcen_inner5 = {
 			type = ring_world_33_intermediate
 			orbit_angle = 240
 			orbit_distance = 40
+			location = solar_system
+		}
+		spawn_megastructure = {
+			type = habitat_0
+			orbit_angle = 1
+			orbit_distance = 1
 			location = solar_system
 		}
 	}
