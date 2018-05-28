@@ -1,0 +1,12 @@
+trait_sedentary = {
+	cost = -2
+	opposites = { "trait_nomadic" "trait_machine_unit" }
+	allowed_archetypes = { BIOLOGICAL }
+	modifier = {
+		pop_migration_speed = -1.0
+		pop_resettlement_cost_mult = 0.25
+	}
+	ai_weight = {
+		weight = 0
+	}
+}
