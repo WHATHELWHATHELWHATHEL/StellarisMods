@@ -1,7 +1,7 @@
 setup_scenario = {
 	name = "huge"
 	priority = 4					#priority decides in which order the scenarios are listed
-	num_stars = 1200
+	num_stars = 1000
 	radius = 499					#should be less than 500, preferably less than ~460
 	num_empires = { min = 0 max = 30 }	#limits player customization
 	num_empire_default = 15

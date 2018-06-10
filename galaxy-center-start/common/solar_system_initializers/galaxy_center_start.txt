@@ -22,6 +22,11 @@ basic_init_galcen = {
 		tile_blockers = none
 		modifiers = none
 		init_effect = {
+			# make food on each tile
+			every_tile = {
+				limit = { has_blocker = no	}
+				set_deposit = d_immense_farmland_deposit
+			}
 			# create buildings each
 			random_tile = {
 				limit = {
