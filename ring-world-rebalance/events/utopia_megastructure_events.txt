@@ -103,6 +103,9 @@ country_event = {
 				is_megastructure_type = ring_world_31_intermediate
 				is_megastructure_type = ring_world_32_intermediate
 				is_megastructure_type = ring_world_33_intermediate
+				is_megastructure_type = ring_world_34_intermediate
+				is_megastructure_type = ring_world_35_intermediate
+				is_megastructure_type = ring_world_36_intermediate
 			}
 		}
 		FROMFROM = {
@@ -113,6 +116,9 @@ country_event = {
 						is_megastructure_type = ring_world_21
 						is_megastructure_type = ring_world_22
 						is_megastructure_type = ring_world_23
+						is_megastructure_type = ring_world_24
+						is_megastructure_type = ring_world_25
+						is_megastructure_type = ring_world_26
 					}
 				}
 			}
@@ -172,6 +178,9 @@ country_event = {
 						is_megastructure_type = ring_world_21
 						is_megastructure_type = ring_world_22
 						is_megastructure_type = ring_world_23
+						is_megastructure_type = ring_world_24
+						is_megastructure_type = ring_world_25
+						is_megastructure_type = ring_world_26
 					}
 				}
 				has_country_flag = finished_ringworld
@@ -189,6 +198,9 @@ country_event = {
 						is_megastructure_type = ring_world_21
 						is_megastructure_type = ring_world_22
 						is_megastructure_type = ring_world_23
+						is_megastructure_type = ring_world_24
+						is_megastructure_type = ring_world_25
+						is_megastructure_type = ring_world_26
 					}
 				}
 			}
